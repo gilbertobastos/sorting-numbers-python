@@ -1,7 +1,3 @@
-
-from typing import List
-
-
 def bubble_sort(list):
     ordered_list = list[:]
 
@@ -12,15 +8,14 @@ def bubble_sort(list):
             if (ordered_list[index] > ordered_list[index + 1]):
                 ordered_list[index], ordered_list[index + 1] = ordered_list[index + 1], ordered_list[index]
                 swapped = True    
-        
-        if swapped:
-            break
     
+        if not swapped:
+            break
+
     return ordered_list
 
 def merge_sort(list):
     # Verifying if is a atomic value (or is empty)
-    print(list)
     if len(list) <= 1:
         return list
 
@@ -43,6 +38,12 @@ def __merge_sort_merge(list1, list2):
     merged_list.extend(list1)
     merged_list.extend(list2)
     return merged_list
+
+numbers = [1, 4, -3, -2, 10, 8]
+numbers_ordered = bubble_sort([1, 4, -3, -2, 10, 8])
+
+print(numbers)
+print(numbers_ordered)
 
 numbers = [1, 4, -3, -2, 10, 8]
 numbers_ordered = merge_sort([1, 4, -3, -2, 10, 8])
